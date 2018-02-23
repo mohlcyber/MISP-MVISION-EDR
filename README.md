@@ -43,7 +43,7 @@ Create a tag that the analyst uses to initiate the hunting process. (e.g. huntin
 Create a tag that will be assigned to event where indicators found. (e.g. Indicator_Found).
 Enter the tags in the misp_mar.py file (line 65, 66).
 ```sh
-"if __name__ == '__main__':
+if __name__ == '__main__':
 
   tag = "hunting"
   ntag = "Indicator_Found"

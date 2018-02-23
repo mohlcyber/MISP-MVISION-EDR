@@ -48,7 +48,7 @@ if __name__ == '__main__':
   tag = "hunting"
   ntag = "Indicator_Found"
   url = "https://localhost/"
-  key = "access key",
+  key = "access key"
 ```
 Create Certificates for OpenDXL and move them into the config folder ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/epoexternalcertissuance.html)). 
 

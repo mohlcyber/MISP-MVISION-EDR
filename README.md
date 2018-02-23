@@ -39,8 +39,11 @@ McAfee ePolicy Orchestrator, DXL Broker, Active Response
 
 ## Configuration
 Enter the MISP url and access key in the misp_mar.py file (line 67, 68).
+
 Create a tag that the analyst uses to initiate the hunting process. (e.g. hunting).
+
 Create a tag that will be assigned to event where indicators found. (e.g. Indicator_Found).
+
 Enter the tags in the misp_mar.py file (line 65, 66).
 ```sh
 if __name__ == '__main__':

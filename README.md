@@ -55,7 +55,7 @@ if __name__ == '__main__':
 ```
 Create Certificates for OpenDXL and move them into the config folder ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/epoexternalcertissuance.html)). 
 
-Make sure to authorized the new created certificates in ePO to use the McAfee Active Response API ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/marsendauth.html)).
+Make sure to authorize the new created certificates in ePO to use the McAfee Active Response API ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/marsendauth.html)).
 
 Make sure that the FULL PATH to the config file is entered in line 10 (mar.py).
 

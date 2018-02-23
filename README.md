@@ -1,4 +1,6 @@
 # MISP - McAfee Active Response integration
+[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+
 This Integration adds automated hunting capabilities to the MISP platform with McAfee Active Response.
 
 Based on tagging a script will extract suspicious MD5 hashes from an Threat Event and will launch automated McAfee Active Response lookups. 

@@ -6,6 +6,8 @@ This Integration adds automated hunting capabilities to the MISP platform with M
 Based on tagging a script will extract suspicious MD5 hashes from an Threat Event and will launch automated McAfee Active Response lookups. 
 If indicators found within the enterprise the script will automatically retag the threat event, add sightings and comments with the findings.
 
+<img width="889" alt="screen shot 2018-06-29 at 11 01 15" src="https://user-images.githubusercontent.com/25227268/42083667-db54a28c-7b8b-11e8-85d9-e1a4805a717c.png">
+
 ## Component Description
 **MISP** threat sharing platform is a free and open source software helping information sharing of threat and cyber security indicators. https://github.com/MISP/MISP
 

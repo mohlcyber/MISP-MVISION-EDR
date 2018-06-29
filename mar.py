@@ -7,7 +7,7 @@ from dxlmarclient import MarClient, ResultConstants, ProjectionConstants, \
     ConditionConstants, SortConstants, OperatorConstants
 
 def action(md5):
-    CONFIG_FILE = "/home/misp_mar/config/dxlclient.config"
+    CONFIG_FILE = "path to the config file"
     config = DxlClientConfig.create_dxl_config_from_file(CONFIG_FILE)
 
     with DxlClient(config) as client:
@@ -39,6 +39,5 @@ def action(md5):
         if results_context.has_results:
             results = results_context.get_results()
             return results
-
         else:
             pass

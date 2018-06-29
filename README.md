@@ -40,20 +40,21 @@ python setup.py install
 McAfee ePolicy Orchestrator, DXL Broker, Active Response
 
 ## Configuration
-Enter the MISP url and access key in the misp_mar.py file (line 67, 68).
+Enter the MISP url and access key in the misp_mar.py file (line 68, 69).
 
-Create a tag that the analyst uses to initiate the hunting process. (e.g. hunting).
+Create a tag that the analyst uses to initiate the hunting process. (e.g. investigate).
 
 Create a tag that will be assigned to event where indicators found. (e.g. Indicator_Found).
 
-Enter the tags in the misp_mar.py file (line 65, 66).
+Enter the tags in the misp_mar.py file (line 66, 67).
 ```sh
 if __name__ == '__main__':
 
-  tag = "hunting"
-  ntag = "Indicator_Found"
-  url = "https://localhost/"
-  key = "access key"
+    tag = "investigate" #Enter the tag to search for
+    ntag = "indicator_found" #Enter the new tag to assign when indicators found
+    url = "https://misp-ip/" #Enter the MISP IP
+    key = "api key" #Enter the MISP api key
+    
 ```
 Create Certificates for OpenDXL and move them into the config folder ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/epoexternalcertissuance.html)). 
 

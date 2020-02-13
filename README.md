@@ -66,9 +66,9 @@ Make sure that the FULL PATH to the config file is entered in line 22.
 
 ## Video
 
-[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/4AkLaPFCdWY/0.jpg)](https://www.youtube.com/watch?v=4AkLaPFCdWY)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/C68cJ9XnjbI/0.jpg)](https://youtu.be/C68cJ9XnjbI)
 
-link: https://youtu.be/4AkLaPFCdWY
+link: https://youtu.be/C68cJ9XnjbI
 
 ## Summary
 MISP contains global, community and locally produced intelligence that can be used with McAfee MVISION EDR for automated threat hunting.

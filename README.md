@@ -4,7 +4,7 @@
 This integration adds automated hunting capabilities to the MISP platform with McAfee MVISION EDR.
 
 Based on tagging a script will extract suspicious MD5 hashes from a threat event and will launch automated MVISION EDR lookups. 
-If indicators found - the script will automatically re-tag the threat event, add sightings, add attributes and comments with the findings.
+If indicators found - the script will automatically re-tag the threat event, add sightings, add attributes and comments.
 
 <img width="863" alt="Screenshot 2020-02-13 at 20 42 35" src="https://user-images.githubusercontent.com/25227268/74471958-6a661e80-4ea1-11ea-89f7-0c11356b2024.png">
 

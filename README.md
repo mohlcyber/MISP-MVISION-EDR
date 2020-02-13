@@ -9,7 +9,7 @@ If indicators found the script will automatically retag the threat event, add si
 ## Component Description
 **MISP** threat sharing platform is a free and open source software helping information sharing of threat and cyber security indicators. https://github.com/MISP/MISP
 
-**McAfee MVISION EDR** is an endpoint detection and response solution. It provides the cability to query endpoint in real-time. https://www.mcafee.com/in/products/active-response.aspx
+**McAfee MVISION EDR** is an endpoint detection and response solution. It provides the cability to query endpoint in real-time. https://www.mcafee.com/enterprise/en-us/products/mvision-edr.html
 
 ## Prerequisites
 MISP platform ([Link](https://github.com/MISP/MISP)) (tested with MISP 2.4.86)

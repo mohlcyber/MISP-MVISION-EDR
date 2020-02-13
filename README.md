@@ -1,17 +1,15 @@
-# MISP - McAfee Active Response integration
+# MISP - McAfee MVISION EDR integration
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-This Integration adds automated hunting capabilities to the MISP platform with McAfee Active Response.
+This Integration adds automated hunting capabilities to the MISP platform with McAfee MVISION EDR.
 
-Based on tagging a script will extract suspicious MD5 hashes from an threat event and will launch automated McAfee Active Response lookups. 
-If indicators found within the enterprise the script will automatically retag the threat event, add sightings and comments with the findings.
-
-<img width="889" alt="screen shot 2018-06-29 at 11 01 15" src="https://user-images.githubusercontent.com/25227268/42083667-db54a28c-7b8b-11e8-85d9-e1a4805a717c.png">
+Based on tagging a script will extract suspicious MD5 hashes from a threat event and will launch automated MVISION EDR lookups. 
+If indicators found the script will automatically retag the threat event, add sightings, add attributes and comments with the findings.
 
 ## Component Description
 **MISP** threat sharing platform is a free and open source software helping information sharing of threat and cyber security indicators. https://github.com/MISP/MISP
 
-**McAfee Active Response** is an endpoint detection and response solution. It provides the cability to query endpoint in real-time. https://www.mcafee.com/in/products/active-response.aspx
+**McAfee MVISION EDR** is an endpoint detection and response solution. It provides the cability to query endpoint in real-time. https://www.mcafee.com/in/products/active-response.aspx
 
 ## Prerequisites
 MISP platform ([Link](https://github.com/MISP/MISP)) (tested with MISP 2.4.86)
@@ -39,7 +37,7 @@ cd opendxl-mar-client-python/
 python setup.py install
 ```
 
-McAfee ePolicy Orchestrator, DXL Broker, Active Response
+On-Prem McAfee ePolicy Orchestrator, DXL Broker, MVISION EDR.
 
 ## Configuration
 Enter the MISP url and access key in the misp_mar.py file (line 68, 69).
@@ -48,36 +46,21 @@ Create a tag that the analyst uses to initiate the hunting process. (e.g. invest
 
 Create a tag that will be assigned to event where indicators found. (e.g. Indicator_Found).
 
-Enter the tags in the misp_mar.py file (line 66, 67).
+Modify the misp_edr.py file (line 16 - 22).
 ```sh
-if __name__ == '__main__':
+misp_url = 'https://1.1.1.1'
+misp_key = 'api key'
+misp_verify = False
+misp_tag = 'McAfee: Run MVISION EDR Query'
+misp_ntag = 'McAfee: MVISION EDR Indicator Found'
 
-    tag = "investigate" #Enter the tag to search for
-    ntag = "indicator_found" #Enter the new tag to assign when indicators found
-    url = "https://misp-ip/" #Enter the MISP IP
-    key = "api key" #Enter the MISP api key
-    
+dxl_config = '/path/to/dxlclient.config'
 ```
 Create Certificates for OpenDXL and move them into the config folder ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/epoexternalcertissuance.html)). 
 
 Make sure to authorize the new created certificates in ePO to use the McAfee Active Response API ([Link](https://opendxl.github.io/opendxl-client-python/pydoc/marsendauth.html)).
 
-Make sure that the FULL PATH to the config file is entered in line 10 (mar.py).
-
-### Optional
-
-run the script as a cronjob
-
-```sh
-sudo crontab -e
-```
-
-enter at the bottom e.g.:
-```sh
-*/1 * * * * python /home/misp_mar/misp_mar.py > /home/misp_mar/output.log
-```
-
-This will run the script every minute and create an output file.
+Make sure that the FULL PATH to the config file is entered in line 22.
 
 ## Video
 

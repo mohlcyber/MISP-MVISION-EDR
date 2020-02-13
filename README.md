@@ -71,4 +71,4 @@ Make sure that the FULL PATH to the config file is entered in line 22.
 link: https://youtu.be/4AkLaPFCdWY
 
 ## Summary
-MISP contains global, community and locally produced intelligence that can be used with McAfee Active Response for automated threat hunting.
+MISP contains global, community and locally produced intelligence that can be used with McAfee MVISION EDR for automated threat hunting.

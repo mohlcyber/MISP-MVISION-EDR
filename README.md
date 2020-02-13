@@ -1,10 +1,12 @@
 # MISP - McAfee MVISION EDR integration
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
 
-This Integration adds automated hunting capabilities to the MISP platform with McAfee MVISION EDR.
+This integration adds automated hunting capabilities to the MISP platform with McAfee MVISION EDR.
 
 Based on tagging a script will extract suspicious MD5 hashes from a threat event and will launch automated MVISION EDR lookups. 
-If indicators found the script will automatically retag the threat event, add sightings, add attributes and comments with the findings.
+If indicators found - the script will automatically re-tag the threat event, add sightings, add attributes and comments with the findings.
+
+<img width="863" alt="Screenshot 2020-02-13 at 20 42 35" src="https://user-images.githubusercontent.com/25227268/74471958-6a661e80-4ea1-11ea-89f7-0c11356b2024.png">
 
 ## Component Description
 **MISP** threat sharing platform is a free and open source software helping information sharing of threat and cyber security indicators. https://github.com/MISP/MISP
@@ -12,7 +14,7 @@ If indicators found the script will automatically retag the threat event, add si
 **McAfee MVISION EDR** is an endpoint detection and response solution. It provides the cability to query endpoint in real-time. https://www.mcafee.com/enterprise/en-us/products/mvision-edr.html
 
 ## Prerequisites
-MISP platform ([Link](https://github.com/MISP/MISP)) (tested with MISP 2.4.86)
+MISP platform ([Link](https://github.com/MISP/MISP)) (tested with MISP 2.4.121)
 
 PyMISP ([Link](https://github.com/MISP/PyMISP))
 ```sh
@@ -40,11 +42,11 @@ python setup.py install
 On-Prem McAfee ePolicy Orchestrator, DXL Broker, MVISION EDR.
 
 ## Configuration
-Enter the MISP url and access key in the misp_mar.py file (line 68, 69).
+Enter the MISP url and access key in the misp_edr.py file (line 16, 17).
 
-Create a tag that the analyst uses to initiate the hunting process. (e.g. investigate).
+Create a tag that the analyst uses to initiate the hunting process. (e.g. McAfee: Run MVISION EDR Query).
 
-Create a tag that will be assigned to event where indicators found. (e.g. Indicator_Found).
+Create a tag that will be assigned to event where indicators found. (e.g. McAfee: MVISION EDR Indicator Found).
 
 Modify the misp_edr.py file (line 16 - 22).
 ```sh

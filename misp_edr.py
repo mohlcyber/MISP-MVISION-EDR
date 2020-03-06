@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Written by mohlcyber v.0.2 13/02/2020
+# Written by mohlcyber v.0.3 06/03/2020
 
 import requests
 import sys
@@ -19,7 +19,7 @@ misp_verify = False
 misp_tag = 'McAfee: Run MVISION EDR Query'
 misp_ntag = 'McAfee: MVISION EDR Indicator Found'
 
-dxl_config = '/Users/mohl/Desktop/dxl_certs/new/dxlclient.config'
+dxl_config = 'path to dxlclient.config'
 
 
 class EDRMISP():
@@ -29,6 +29,7 @@ class EDRMISP():
         self.misp = ExpandedPyMISP(misp_url, misp_key, misp_verify)
         self.tags = self.misp.tags()
         self.attributes = []
+        self.found = False
 
     def add_attribute(self, eventid, finding):
         attr = {
@@ -95,6 +96,7 @@ class EDRMISP():
                         .format(hostname, ip, status, full_name, md5)
                     hostnames.append(hostname)
 
+                    self.found = True
                     self.add_sighting(attr_id, hostname)
                     self.add_attribute(eventid, finding)
 
@@ -123,7 +125,9 @@ class EDRMISP():
                                 self.edr_search(eventid, attributes['value'], attributes['id'], attributes['uuid'])
 
                     self.misp.untag(event['Event']['uuid'], misp_tag)
-                    self.misp.tag(event['Event']['uuid'], misp_ntag)
+
+                    if self.found is True:
+                        self.misp.tag(event['Event']['uuid'], misp_ntag)
 
         except Exception as error:
             exc_type, exc_obj, exc_tb = sys.exc_info()

@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Written by mohlcyber v.0.3 06/03/2020
+# by mohlcyber v.0.3 06/03/2020
 
 import requests
 import sys

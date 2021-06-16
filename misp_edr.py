@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-# Written by mohlcyber v.0.1 08/06/2020
+# Written by mohlcyber v.0.2 16/06/2021
 
 import requests
 import sys
@@ -26,11 +26,13 @@ class EDRMISP():
         self.tags = self.misp.tags()
         self.attributes = []
         self.found = False
-
+            
         if args.region == 'EU':
-            self.edr = 'https://api.soc.eu-central-1.mcafee.com/'
+            self.edr = 'https://api.soc.eu-central-1.mcafee.com'
         elif args.region == 'US':
-            self.edr = 'https://api.soc.mcafee.com/'
+            self.edr = 'https://api.soc.mcafee.com'
+        elif args.region == 'SY':
+            self.base_url = 'https://soc.ap-southeast-2.mcafee.com'
 
         self.verify = True
         self.session = requests.Session()

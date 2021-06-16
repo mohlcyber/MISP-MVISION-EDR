@@ -32,7 +32,7 @@ class EDRMISP():
         elif args.region == 'US':
             self.edr = 'https://api.soc.mcafee.com'
         elif args.region == 'SY':
-            self.base_url = 'https://soc.ap-southeast-2.mcafee.com'
+            self.edr = 'https://soc.ap-southeast-2.mcafee.com'
 
         self.verify = True
         self.session = requests.Session()

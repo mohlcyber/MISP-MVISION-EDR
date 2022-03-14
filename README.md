@@ -18,7 +18,7 @@ This repo includes two different ways to integrate MISP with McAfee MVISION EDR.
 
 **misp_edr.py** integrates using the API's.
 
-**misp_dxl.py** integrates using OpenDXL and can be used for McAfee Active Response as well.
+**misp_dxl.py** integrates using OpenDXL and requires McAfee Active Response Server.
 
 ### misp_edr.py
 
